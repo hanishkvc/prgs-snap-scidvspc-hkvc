@@ -1,0 +1,41 @@
+name: scidvspc
+version: "latest-svn"
+summary: svidvspc
+description: |
+  SCID vs. PC is a Chess Toolkit
+  Shane's Chess Information Database is a powerful Chess Toolkit, with which one can create huge databases,
+  run chess engines, and play casual games against the computer or online with the Free Internet Chess Server. 
+  It was originally written by Shane Hudson , and has received strong contribution from Pascal Georges and others.
+  Scid vs. PC began with bug-fixes for the computer-versus-player features of Scid (hence the name), but has 
+  evolved into a solid alternative with many new features and interfaces. The project is authored by Stevenaaus 
+  and numerous contributors
+  https://sourceforge.net/p/scidvspc/code/HEAD/tarball
+  svn checkout http://svn.code.sf.net/p/scidvspc/code/ scidvspc-code
+
+grade: devel
+confinement: devmode
+
+apps:
+  scidvspc:
+    command: usr/local/bin/scid
+    plugs: [home,x11,unity7]
+    environment:
+      TCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.6:$TCL_LIBRARY
+      TK_LIBRARY: $SNAP/usr/share/tcltk/tk8.6:$TK_LIBRARY
+
+
+parts:
+  scidvspc:
+    plugin: autotools
+    source-type: svn
+    source: http://svn.code.sf.net/p/scidvspc/code/
+    build-packages:
+      - g++
+      - make
+      - tcl-dev
+      - tk-dev
+    stage-packages:
+      - tk
+      - tcl
+      - gettext
+
