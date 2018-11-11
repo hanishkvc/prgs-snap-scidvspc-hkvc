@@ -11,6 +11,9 @@ description: |
   and numerous contributors
   https://sourceforge.net/p/scidvspc/code/HEAD/tarball
   svn checkout http://svn.code.sf.net/p/scidvspc/code/ scidvspc-code
+      TCLTK_BPATH- $SNAP/usr/share/tcltk
+      TCL_LIBRARY- $TCLTK_BPATH/tcl8.6:$TCLTK_BPATH/tcl8.6/tcl8:$TCL_LIBRARY
+      TK_LIBRARY- $SNAP/usr/share/tcltk/tk8.6:$TK_LIBRARY
 
 grade: devel
 confinement: devmode
@@ -20,9 +23,9 @@ apps:
     command: usr/local/bin/scid
     plugs: [home,x11,unity7]
     environment:
-      TCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.6:$TCL_LIBRARY
-      TK_LIBRARY: $SNAP/usr/share/tcltk/tk8.6:$TK_LIBRARY
-
+      HKVCTCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.5:$TCL_LIBRARY
+      HKVCTK_LIBRARY: $SNAP/usr/share/tcltk/tk8.5:$TK_LIBRARY
+      HKVCTCL_PACKAGE_PATH: "$SNAP/usr/lib/tcltk $SNAP/usr/share/tcltk $SNAP/usr/share/tcltk/tcl8.5 $SNAP/usr/share/tcltk/tcl8.5/tcl8"
 
 parts:
   scidvspc:
@@ -32,10 +35,9 @@ parts:
     build-packages:
       - g++
       - make
-      - tcl-dev
-      - tk-dev
+      - tcl8.5-dev
+      - tk8.5-dev
     stage-packages:
-      - tk
-      - tcl
-      - gettext
+      - tk8.5
+      - tcl8.5
 
