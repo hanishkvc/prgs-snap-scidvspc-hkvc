@@ -25,6 +25,7 @@ apps:
     environment:
       HKVCTCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.5:$TCL_LIBRARY
       HKVCTK_LIBRARY: $SNAP/usr/share/tcltk/tk8.5:$TK_LIBRARY
+      HKVCTCL_PACKAGE_PATH: "$SNAP/usr/lib/tcltk $SNAP/usr/share/tcltk $SNAP/usr/share/tcltk/tcl8.5 $SNAP/usr/share/tcltk/tcl8.5/tcl8"
 
 
 parts:
