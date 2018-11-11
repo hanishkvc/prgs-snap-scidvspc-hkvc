@@ -23,8 +23,8 @@ apps:
     command: usr/local/bin/scid
     plugs: [home,x11,unity7]
     environment:
-      HKVCTCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.6:$TCL_LIBRARY
-      HKVCTK_LIBRARY: $SNAP/usr/share/tcltk/tk8.6:$TK_LIBRARY
+      HKVCTCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.5:$TCL_LIBRARY
+      HKVCTK_LIBRARY: $SNAP/usr/share/tcltk/tk8.5:$TK_LIBRARY
 
 
 parts:
@@ -41,16 +41,27 @@ parts:
       - tk8.5
       - tcl8.5
 
-  fixup-tcl:
+  fixup-tcl-1:
     plugin: dump
     source: /usr/lib/tcl8.5/
     organize:
       '*': usr/lib/tcl8.5/
-      ../x86_64-linux-gnu/tcl8.5/: usr/lib/x86_64-linux-gnu/tcl8.5/
 
-  fixup-tk:
+  fixup-tcl-2:
+    plugin: dump
+    source: /usr/lib/x86_64-linux-gnu/tcl8.5/
+    organize:
+      '*': usr/lib/x86_64-linux-gnu/tcl8.5/
+
+  fixup-tk-1:
     plugin: dump
     source: /usr/lib/tk8.5/
     organize:
       '*': usr/lib/tk8.5/
+
+  fixup-tk-2:
+    plugin: dump
+    source: /usr/lib/x86_64-linux-gnu/tk8.5/
+    organize:
+      '*': usr/lib/x86_64-linux-gnu/tk8.5/
 
