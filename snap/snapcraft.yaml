@@ -30,8 +30,8 @@ apps:
     plugs: [desktop,desktop-legacy,home,x11,unity7]
     environment:
       TCLTK_BPATH: $SNAP/usr/share/tcltk
-      HKVCTCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
-      HKVCTK_LIBRARY: $TCLTK_BPATH/tk8.6:$TK_LIBRARY
+      TCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
+      TK_LIBRARY: $TCLTK_BPATH/tk8.6:$TK_LIBRARY
       HKVCTCL_PACKAGE_PATH: "$SNAP/usr/lib/tcltk $SNAP/usr/share/tcltk $SNAP/usr/share/tcltk/tcl8.6 $SNAP/usr/share/tcltk/tcl8.6/tcl8"
 
 parts:
@@ -50,16 +50,19 @@ parts:
       - tk
       - tcl
 
+  fixit-scidvspc:
+    plugin: nil
+    after: [scidvspc]
+    override-prime: |
+      sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/local/bin/scid
+      sed -i 's/Cmd  fruit/Cmd  \/snap\/scidvspc\/current\/usr\/local\/bin\/fruit/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
+      sed -i 's/Cmd  phalanx/Cmd  \/snap\/scidvspc\/current\/usr\/local\/bin\/phalanx/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
+      sed -i 's/Cmd  scidlet/Cmd  \/snap\/scidvspc\/current\/usr\/local\/bin\/scidlet/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
+
   fixit-tcltk:
     plugin: nil
     after: [scidvspc]
     override-prime: |
       sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/share/tcltk/tcl8.6/tm.tcl
-      sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/local/bin/scid
-      sed -i 's/Cmd  fruit/Cmd  \/snap\/scidvspc\/current\/usr\/local\/bin\/fruit/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
-      sed -i 's/Cmd  phalanx/Cmd  \/snap\/scidvspc\/current\/usr\/local\/bin\/phalanx/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
-      sed -i 's/Cmd  scidlet/Cmd  \/snap\/scidvspc\/current\/usr\/local\/bin\/scidlet/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
-      cp -a $SNAPCRAFT_PRIME/usr/share/tcltk/* $SNAPCRAFT_PRIME/usr/lib/
       sed -i 's/join \//join \/snap\/scidvspc\/current\//' $SNAPCRAFT_PRIME/usr/lib/tcltk/x86_64-linux-gnu/tk8.6/pkgIndex.tcl
-
 
