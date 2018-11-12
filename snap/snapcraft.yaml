@@ -9,17 +9,40 @@ description: |
   Scid vs. PC began with bug-fixes for the computer-versus-player features of Scid (hence the name), but has 
   evolved into a solid alternative with many new features and interfaces. The project is authored by Stevenaaus 
   and numerous contributors
+
   https://sourceforge.net/p/scidvspc/code/HEAD/tarball
   svn checkout http://svn.code.sf.net/p/scidvspc/code/ scidvspc-code
-      TCLTK_BPATH- $SNAP/usr/share/tcltk
-      TCL_LIBRARY- $TCLTK_BPATH/tcl8.6:$TCLTK_BPATH/tcl8.6/tcl8:$TCL_LIBRARY
-      TCL_LIBRARY- $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
-       TK_LIBRARY- $TCLTK_BPATH/tk8.6:$TK_LIBRARY
-      HKVCTCL_LIBRARY- $SNAP/usr/share/tcltk/tcl8.6:$TCL_LIBRARY
-      HKVCTK_LIBRARY- $SNAP/usr/share/tcltk/tk8.6:$TK_LIBRARY
-  This app's home dir is <user-$HOME>/snap/scidvspc/current/
-  NOTE = This is a experimental snap packaging of scid_vs_pc by HanishKVC
-  TODO = Avoid copying usr/share/tcltk/ to usr/lib/, instead set the TCL_LIBRARY & TK_LIBRARY
+
+  TCLTK_BPATH- $SNAP/usr/share/tcltk
+  TCL_LIBRARY- $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
+  TK_LIBRARY- $TCLTK_BPATH/tk8.6:$TK_LIBRARY
+
+  The <app-$HOME> dir is <user-$HOME>/snap/scidvspc/<version>
+  $SNAP_USER_DATA points to this <app's $HOME> dir
+  
+
+  NOTE
+  This is a experimental snap packaging of scid_vs_pc by HanishKVC
+
+  HISTORY
+
+  1.Q Not able to find init.tcl
+  1.1 Set TCL_LIBRARY and TK_LIBRARY wrt $SNAP related tcltk paths,
+      solved init.tcl but this popped up msgcat issue, SO
+  1.2 Tried copying usr/share/tcltk/* to usr/lib/, 
+      but again solved init.tcl but msgcat issue popped up.
+  1.3 After finding 2.2 edit tm.tcl soln; 
+      Avoid copying usr/share/tcltk/* to usr/lib/, by setting TCL_LIBRARY & TK_LIBRARY
+      The more elegant solution.
+
+  2.Q Not able to find msgcat
+  2.1 tried updating path in pkgIndex.tcl, didnt help, but as change is logically correct retaining
+  2.2 edit tm.tcl to search in $SNAP rooted paths rather than the default / rooted paths fixed the issue 
+
+  TODO
+  T01 Have to check if there is a way to persist data across snap remove and snap install. 
+      Seems like $SNAP_USER_DATA and $SNAP_USER_COMMON get cleared during snap remove
+
 
 grade: devel
 confinement: strict
