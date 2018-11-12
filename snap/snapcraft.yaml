@@ -47,6 +47,8 @@ parts:
     plugin: nil
     after: [scidvspc]
     override-prime: |
+      sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/share/tcltk/tcl8.5/tm.tcl
+      sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/local/bin/scid
       cp -a $SNAPCRAFT_PRIME/usr/share/tcltk/* $SNAPCRAFT_PRIME/usr/lib/
       sed -i 's/join \//join \/snap\/scidvspc\/current\//' $SNAPCRAFT_PRIME/usr/lib/tcltk/x86_64-linux-gnu/tk8.5/pkgIndex.tcl
 
