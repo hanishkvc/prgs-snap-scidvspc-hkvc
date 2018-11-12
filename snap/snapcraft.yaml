@@ -46,13 +46,14 @@ parts:
   fixit-tcltk:
     plugin: dump
     source: /usr/share/tcltk/
+    after: [scidvspc]
     organize: 
       '*': ./usr/lib/
 
   fixit-tcltk-2:
-    plugin: dump
-    source: snap/
-    organize:
-      'pkgIndex.tcl': /usr/lib/tcltk/x86_64-linux-gnu/tk8.5/pkgIndex.tcl
+    plugin: nil
+    after: [fixit-tcltk]
+    override-prime: |
+      sed -i 's/join \//join \/snap\/scidvspc\/current\//' $SNAPCRAFT_PRIME/usr/lib/tcltk/x86_64-linux-gnu/tk8.5/pkgIndex.tcl
 
 
