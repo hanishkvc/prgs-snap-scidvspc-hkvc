@@ -35,21 +35,21 @@ parts:
     build-packages:
       - g++
       - make
-      - tcl8.5-dev
-      - tk8.5-dev
+      - tcl-dev
+      - tk-dev
     stage-packages:
-      - libtcl8.5
-      - libtk8.5
-      - tk8.5
-      - tcl8.5
+      - libtcl8.6
+      - libtk8.6
+      - tk
+      - tcl
 
   fixit-tcltk:
     plugin: nil
     after: [scidvspc]
     override-prime: |
-      sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/share/tcltk/tcl8.5/tm.tcl
+      sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/share/tcltk/tcl8.6/tm.tcl
       sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/local/bin/scid
       cp -a $SNAPCRAFT_PRIME/usr/share/tcltk/* $SNAPCRAFT_PRIME/usr/lib/
-      sed -i 's/join \//join \/snap\/scidvspc\/current\//' $SNAPCRAFT_PRIME/usr/lib/tcltk/x86_64-linux-gnu/tk8.5/pkgIndex.tcl
+      sed -i 's/join \//join \/snap\/scidvspc\/current\//' $SNAPCRAFT_PRIME/usr/lib/tcltk/x86_64-linux-gnu/tk8.6/pkgIndex.tcl
 
 
