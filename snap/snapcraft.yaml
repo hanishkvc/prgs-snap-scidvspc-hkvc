@@ -68,6 +68,7 @@ parts:
       - tcl-dev
       - tk-dev
     stage-packages:
+      - stockfish
       - libtcl8.6
       - libtk8.6
       - tk
