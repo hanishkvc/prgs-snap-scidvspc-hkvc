@@ -1,5 +1,5 @@
 name: scidvspc
-version: "latest-svn-testing"
+version: "latest-svn-testing02"
 summary: svidvspc
 description: |
   SCID vs. PC is a Chess Toolkit
@@ -49,6 +49,9 @@ parts:
     override-prime: |
       sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/share/tcltk/tcl8.6/tm.tcl
       sed -i 's/\/usr\//\/snap\/scidvspc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/local/bin/scid
+      sed -i 's/Cmd  fruit/Cmd  \/snap\/scidvspc\/current\/usr\/local\/bin\/fruit/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
+      sed -i 's/Cmd  phalanx/Cmd  \/snap\/scidvspc\/current\/usr\/local\/bin\/phalanx/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
+      sed -i 's/Cmd  scidlet/Cmd  \/snap\/scidvspc\/current\/usr\/local\/bin\/scidlet/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
       cp -a $SNAPCRAFT_PRIME/usr/share/tcltk/* $SNAPCRAFT_PRIME/usr/lib/
       sed -i 's/join \//join \/snap\/scidvspc\/current\//' $SNAPCRAFT_PRIME/usr/lib/tcltk/x86_64-linux-gnu/tk8.6/pkgIndex.tcl
 
