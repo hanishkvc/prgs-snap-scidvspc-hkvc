@@ -1,5 +1,5 @@
 name: scidvspc
-version: "latest-svn"
+version: "latest-svn-testing"
 summary: svidvspc
 description: |
   SCID vs. PC is a Chess Toolkit
@@ -16,7 +16,7 @@ description: |
       TK_LIBRARY- $SNAP/usr/share/tcltk/tk8.6:$TK_LIBRARY
 
 grade: devel
-confinement: devmode
+confinement: strict
 
 apps:
   scidvspc:
