@@ -1,6 +1,6 @@
 name: scidvspc
-version: "latest-svn-testing02"
-summary: svidvspc
+version: "latest-svn-test-20181112"
+summary: svidvspc - A Powerfull Chess Tookit
 description: |
   SCID vs. PC is a Chess Toolkit
   Shane's Chess Information Database is a powerful Chess Toolkit, with which one can create huge databases,
@@ -13,7 +13,11 @@ description: |
   svn checkout http://svn.code.sf.net/p/scidvspc/code/ scidvspc-code
       TCLTK_BPATH- $SNAP/usr/share/tcltk
       TCL_LIBRARY- $TCLTK_BPATH/tcl8.6:$TCLTK_BPATH/tcl8.6/tcl8:$TCL_LIBRARY
-      TK_LIBRARY- $SNAP/usr/share/tcltk/tk8.6:$TK_LIBRARY
+      TCL_LIBRARY- $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
+       TK_LIBRARY- $TCLTK_BPATH/tk8.6:$TK_LIBRARY
+  This app's home dir is <user-$HOME>/snap/scidvspc/current/
+  NOTE = This is a experimental snap packaging of scid_vs_pc by HanishKVC
+  TODO = Avoid copying usr/share/tcltk/ to usr/lib/, instead set the TCL_LIBRARY & TK_LIBRARY
 
 grade: devel
 confinement: strict
@@ -23,9 +27,9 @@ apps:
     command: usr/local/bin/scid
     plugs: [desktop,desktop-legacy,home,x11,unity7]
     environment:
-      HKVCTCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.5:$TCL_LIBRARY
-      HKVCTK_LIBRARY: $SNAP/usr/share/tcltk/tk8.5:$TK_LIBRARY
-      HKVCTCL_PACKAGE_PATH: "$SNAP/usr/lib/tcltk $SNAP/usr/share/tcltk $SNAP/usr/share/tcltk/tcl8.5 $SNAP/usr/share/tcltk/tcl8.5/tcl8"
+      HKVCTCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.6:$TCL_LIBRARY
+      HKVCTK_LIBRARY: $SNAP/usr/share/tcltk/tk8.6:$TK_LIBRARY
+      HKVCTCL_PACKAGE_PATH: "$SNAP/usr/lib/tcltk $SNAP/usr/share/tcltk $SNAP/usr/share/tcltk/tcl8.6 $SNAP/usr/share/tcltk/tcl8.6/tcl8"
 
 parts:
   scidvspc:
