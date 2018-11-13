@@ -15,7 +15,7 @@ HanishKVC, 2018
 
   ** Home
 
-  The <app-$HOME> dir is <user-$HOME>/snap/scidvspc/<version>
+  The <app-$HOME> dir is <user-$HOME>/snap/scidvspc-hkvc/<revision>
   $SNAP_USER_DATA points to this <app's $HOME> dir
   
   ** ToRun
