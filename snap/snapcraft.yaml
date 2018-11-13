@@ -1,5 +1,5 @@
 name: scidvspc-hkvc
-version: "latest-svn-test-20181112"
+version: "latest-svn-test-20181113"
 version-script: snap/get-version.sh
 summary: svidvspc - A Powerfull Chess Tookit
 description: |
@@ -27,9 +27,12 @@ description: |
   Home
   The <app-$HOME> dir is <user-$HOME>/snap/scidvspc/<version>
   $SNAP_USER_DATA points to this <app's $HOME> dir
+
+  ToRun
+  type scidvspc-hkvc.scidvspc in a console/terminal
   
   NOTE
-  This is a experimental snap packaging of scid_vs_pc by HanishKVC
+  This is just a experimental snap packaging of scid_vs_pc by HanishKVC
 
 
 grade: devel
@@ -79,4 +82,12 @@ parts:
     override-prime: |
       sed -i 's/\/usr\//\/snap\/scidvspc-hkvc\/current\/usr\//g' $SNAPCRAFT_PRIME/usr/share/tcltk/tcl8.6/tm.tcl
       sed -i 's/join \//join \/snap\/scidvspc-hkvc\/current\//' $SNAPCRAFT_PRIME/usr/lib/tcltk/x86_64-linux-gnu/tk8.6/pkgIndex.tcl
+
+  fixit-src:
+    plugin: nil
+    after: [scidvspc]
+    override-prime: |
+      MYDOCPATH=$SNAPCRAFT_PRIME/usr/share/doc/scidvspc-hkvc
+      mkdir $MYDOCPATH
+      cp -a ../snap $MYDOCPATH/
 
