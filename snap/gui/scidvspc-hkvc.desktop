@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=SCIDvsPC Chess Toolkit
+Comment[en_IN]=Chess toolkit, Chess Databases, Analysis
+Comment=Chess toolkit, Chess Databases, Analysis
+keywords=Chess toolkit; Chess Databases; Analysis;
+Exec=scidvspc
+Icon=chess
+Terminal=false
+Type=Application
+Categories=X11;TCLTK;Utility;Chess;
+
