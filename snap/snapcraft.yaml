@@ -74,6 +74,8 @@ parts:
       - libtk8.6
       - tk
       - tcl
+      - tcl-snack
+      - tdom
 
   fixit-scidvspc:
     plugin: nil
