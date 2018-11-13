@@ -30,6 +30,7 @@ description: |
 
   ToRun
   type scidvspc-hkvc.scidvspc in a console/terminal
+  stockfish available in $SNAP/usr/games/
 
   Source for this snap packaging
   the snap directory used by snapcraft to generate this snap package 
@@ -45,7 +46,7 @@ confinement: strict
 apps:
   scidvspc:
     command: usr/local/bin/scid
-    plugs: [desktop,desktop-legacy,home]
+    plugs: [desktop,desktop-legacy,home,wayland,unity7]
     environment:
       TCLTK_BPATH: $SNAP/usr/share/tcltk
       TCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
@@ -94,4 +95,4 @@ parts:
       MYDOCPATH=$SNAPCRAFT_PRIME/usr/share/doc/scidvspc-hkvc
       mkdir $MYDOCPATH
       cp -a ../snap $MYDOCPATH/
-
+      rm -rf $MYDOCPATH/snap/.snapcraft
