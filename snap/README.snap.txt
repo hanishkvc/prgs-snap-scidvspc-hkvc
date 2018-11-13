@@ -21,6 +21,7 @@ HanishKVC, 2018
   ** ToRun
 
   type scidvspc-hkvc.scidvspc in a console/terminal
+  stockfish available in $SNAP/usr/games/
   
   ** Source for this snap packaging
   
@@ -62,3 +63,5 @@ HanishKVC, 2018
 
   T02 Not able to find tdom and snack
 
+  T03 Handling of email / correspondance related logic May not
+      work currently.
