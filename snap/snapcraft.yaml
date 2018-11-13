@@ -30,6 +30,10 @@ description: |
 
   ToRun
   type scidvspc-hkvc.scidvspc in a console/terminal
+
+  Source for this snap packaging
+  the snap directory used by snapcraft to generate this snap package 
+  is in $SNAP/usr/share/doc/scidvspc-hkvc/
   
   NOTE
   This is just a experimental snap packaging of scid_vs_pc by HanishKVC
@@ -41,7 +45,7 @@ confinement: strict
 apps:
   scidvspc:
     command: usr/local/bin/scid
-    plugs: [desktop,desktop-legacy,home,unity7]
+    plugs: [desktop,desktop-legacy,home]
     environment:
       TCLTK_BPATH: $SNAP/usr/share/tcltk
       TCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
