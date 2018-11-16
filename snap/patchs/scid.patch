@@ -1,0 +1,13 @@
+--- scid	2018-11-15 16:01:13.188569397 +0000
++++ scid.hkvc	2018-11-15 15:56:49.392216822 +0000
+@@ -137696,6 +137696,10 @@
+ 	    Cmd  $scidExeDir/scidlet
+ 	    Dir  $scidUserDir"
+   } else {
++    engine "Name Stockfish
++            Cmd  /snap/scidvspc-hkvc/current/usr/games/stockfish
++            Dir  $scidUserDir
++            UCI  1"
+     engine "Name Toga
+             Cmd  /snap/scidvspc-hkvc/current/usr/local/bin/fruit
+             Dir  $scidUserDir

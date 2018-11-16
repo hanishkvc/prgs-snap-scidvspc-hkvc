@@ -1,0 +1,39 @@
+svn-2906-20181113
+
+* Initial experimental packaging of scidvspc as a snap package
+* The Basic application works
+* Have included the standard stockfish available in 16.04 lts
+  release, in this snap package, in addition to the toga/fruit
+  and phalanx included by scidvspc by default.
+* Home interface of snap environment/setup is enabled for this
+  package, so that one can access files in the users home dir.
+  HOWEVER at a later stage, if snap adds support for having a
+  common directory across snap applications, which is persistant
+  even across snap remove and snap install of the snapified app,
+  then home directory access may be removed and user file system
+  access restricted to that snap environment common directory.
+  NOTE: This is different from SNAP_COMMON or SNAP_USER_COMMON
+  directories provided by snap to the snapified apps.
+* TCL_LIBRARY, TK_LIBRARY env variables set to work with $SNAP
+  filesystem setup, required to find init.tcl
+* tm.tcl updated to work with $SNAP filesystem setup/hierarchy
+  required to access msgcat, etc tcl modules
+* Audio and Network interfaces of snap environment is not
+  enabled currently.
+* tdom and snack tcl packages installed, but currently the
+  application is not able to access these. Have to debug
+  and fix this
+* Have added a desktop file to meet snap's requirement wrt
+  unity7 interface using snapified apps.
+
+svn-2906-20181115
+
+* Have added the included stockfish into Analysis engines list
+* Have fixed the Exec path in desktop file, so that the app can
+  be started from xdg compliant window managers.
+
+svn-2906-20181116
+* Define TCLLIBPATH to point to relevant $SNAP based folders,
+  so that additional tcl extension packages installed can be 
+  found. Required to access snack and tdom
+ 

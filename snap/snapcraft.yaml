@@ -1,5 +1,5 @@
 name: scidvspc-hkvc
-version: "latest-svn-test-20181115"
+version: "latest-svn-test-20181116"
 version-script: snap/get-version.sh
 summary: svidvspc - A Powerfull Chess Tookit
 description: |
@@ -51,7 +51,7 @@ apps:
       TCLTK_BPATH: $SNAP/usr/share/tcltk
       TCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
       TK_LIBRARY: $TCLTK_BPATH/tk8.6:$TK_LIBRARY
-      HKVCTCL_PACKAGE_PATH: "$SNAP/usr/lib/tcltk $SNAP/usr/share/tcltk $SNAP/usr/share/tcltk/tcl8.6 $SNAP/usr/share/tcltk/tcl8.6/tcl8"
+      TCLLIBPATH: $SNAP/usr/lib/tcltk $TCLLIBPATH
 
 parts:
   scidvspc:

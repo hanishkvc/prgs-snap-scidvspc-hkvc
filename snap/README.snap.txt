@@ -53,6 +53,15 @@ HanishKVC, 2018
   3.1 Have added the snap directory used by snapcraft to generate
       the snap package into $SNAP/usr/share/doc/scidvspc-hkvc/
 
+  4.Q Where am I when I am running the override-prime logic
+  4.1 I had initially assumed that I will be in the snap folder
+      which contains the snapcraft.yaml file. 
+      HOWEVER the way the logic failed when trying to run patch
+      on usr/local/bin/scid file ...
+  4.2 Based on the way things are working, I assume that I am in
+      $SNAPCRAFT_PRIME folder by default when I am running code
+      as part of the override-prime logic
+
   ** TODO
 
   T01 Have to check if there is a way to persist data across snap 
@@ -62,6 +71,9 @@ HanishKVC, 2018
       should allow users to persist any data they want.
 
   T02 Not able to find tdom and snack
+      Have to enable alsa interface, once issue with snack is
+      resolved.
 
   T03 Handling of email / correspondance related logic May not
-      work currently.
+      work currently. Also network interface is not enabled for
+      the snap currently.
