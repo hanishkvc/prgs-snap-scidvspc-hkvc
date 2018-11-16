@@ -46,7 +46,7 @@ confinement: strict
 apps:
   scidvspc:
     command: usr/local/bin/scid
-    plugs: [desktop,desktop-legacy,home,wayland,unity7]
+    plugs: [desktop,desktop-legacy,unity7,home]
     environment:
       TCLTK_BPATH: $SNAP/usr/share/tcltk
       TCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
