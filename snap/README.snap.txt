@@ -1,5 +1,5 @@
 Notes for the scidvspc snap packaging
-HanishKVC, 2018
+HanishKVC, 2020
 
 
   ** Source
@@ -61,6 +61,17 @@ HanishKVC, 2018
   4.2 Based on the way things are working, I assume that I am in
       $SNAPCRAFT_PRIME folder by default when I am running code
       as part of the override-prime logic
+
+  5.Q Changes to snapcrafting as of 20201019 (here after 2 years)
+  5.1 One needs to use the base tag within snapcraft.yaml and
+      inturn specify a base snap that should be used wrt the
+      build time multipass vm. The current recommendation is
+      core18.
+  5.1 the snap folder used by snapcraft is available within
+      project/snap folder now, instead of snap folder, when using
+      the multipass based snapcraft. Rather the snap folder now
+      corresponds to the runtime snap folder of the user used for
+      building the snap within the multipass based vm.
 
   ** TODO
 

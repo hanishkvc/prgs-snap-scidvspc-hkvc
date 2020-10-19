@@ -33,7 +33,15 @@ svn-2906-20181115
   be started from xdg compliant window managers.
 
 svn-2906-20181116
+
 * Define TCLLIBPATH to point to relevant $SNAP based folders,
   so that additional tcl extension packages installed can be 
   found. Required to access snack and tdom
- 
+
+svn-3141-20201019
+
+* Added base tag to snapcraft.yaml to work with newer snapcraft
+  which use base snaps and multipass, instead of lxd and cleanbuild.
+* Updated path used to refer to the starting snap folder used
+  during build time by snapcraft, which inturn contains the
+  snapcraft.yaml and other support files used to build the snap.
