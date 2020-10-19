@@ -82,7 +82,7 @@ parts:
       sed -i 's/Cmd  fruit/Cmd  \/snap\/scidvspc-hkvc\/current\/usr\/local\/bin\/fruit/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
       sed -i 's/Cmd  phalanx/Cmd  \/snap\/scidvspc-hkvc\/current\/usr\/local\/bin\/phalanx/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
       sed -i 's/Cmd  scidlet/Cmd  \/snap\/scidvspc-hkvc\/current\/usr\/local\/bin\/scidlet/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
-      patch $SNAPCRAFT_PRIME/usr/local/bin/scid ../project/snap/patchs/scid.patch
+      patch $SNAPCRAFT_PRIME/usr/local/bin/scid ../project/snap/local/patchs/scid.patch
       #rm $SNAPCRAFT_PRIME/usr/local/bin/scid.orig || /bin/true
 
   fixit-tcltk:
