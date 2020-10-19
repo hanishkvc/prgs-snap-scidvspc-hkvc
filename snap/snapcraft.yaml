@@ -1,6 +1,6 @@
 name: scidvspc-hkvc
 base: core18
-version: "latest-svn-test-20201019"
+version: "latest-svn-test-20201020"
 version-script: snap/local/get-version.sh
 summary: svidvspc - A Powerfull Chess Tookit
 description: |
@@ -11,34 +11,53 @@ description: |
   Internet Chess Server. It was originally written by Shane Hudson,
   and has received strong contribution from Pascal Georges and 
   others.
+
   Scid vs. PC began with bug-fixes for the computer-versus-player 
   features of Scid (hence the name), but has evolved into a solid 
   alternative with many new features and interfaces. The project 
   is authored by Stevenaaus and numerous contributors
 
-  Source
+  ** Source
+
   https://sourceforge.net/p/scidvspc/code/HEAD/tarball
+
   svn checkout http://svn.code.sf.net/p/scidvspc/code/ scidvspc-code
 
-  Environment
+  ** Environment
+
   TCLTK_BPATH- $SNAP/usr/share/tcltk
+
   TCL_LIBRARY- $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
+
   TK_LIBRARY- $TCLTK_BPATH/tk8.6:$TK_LIBRARY
 
-  Home
+  ** Home
+
   The <app-$HOME> dir is <user-$HOME>/snap/scidvspc-hkvc/<revision>
+
   $SNAP_USER_DATA points to this <app's $HOME> dir
 
-  ToRun
+  ** ToRun
+
   type scidvspc-hkvc.scidvspc in a console/terminal
+
   stockfish available in $SNAP/usr/games/
 
-  Source for this snap packaging
+  ** Source for this snap packaging
+
   the snap directory used by snapcraft to generate this snap package 
   is in $SNAP/usr/share/doc/scidvspc-hkvc/
+
   You will also find this among my github.com/hanishkvc repositories.
+
+  ** Version
+
+  The snap package version contains the svn revision number of scidvspc
+  within it. If manually building the snap, it will try to pick the
+  latest revision of the code.
  
-  NOTE
+  ** NOTE
+
   This is just a experimental snap packaging of scid_vs_pc by HanishKVC
 
 

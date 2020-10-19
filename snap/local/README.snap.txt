@@ -67,11 +67,13 @@ HanishKVC, 2020
       inturn specify a base snap that should be used wrt the
       build time multipass vm. The current recommendation is
       core18.
-  5.1 the snap folder used by snapcraft is available within
+  5.2 the snap folder used by snapcraft is available within
       project/snap folder now, instead of snap folder, when using
       the multipass based snapcraft. Rather the snap folder now
       corresponds to the runtime snap folder of the user used for
       building the snap within the multipass based vm.
+  5.3 any support files within the project's snapcraft snap folder
+      needs to be moved to a subfolder named local.
 
   ** TODO
 

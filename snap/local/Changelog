@@ -45,3 +45,7 @@ svn-3141-20201019
 * Updated path used to refer to the starting snap folder used
   during build time by snapcraft, which inturn contains the
   snapcraft.yaml and other support files used to build the snap.
+* Moved the support files in snapcraft snap folder to the local
+  subfolder.
+* The fresh build has picked up v4.21+ of scidvspc.
+
