@@ -36,7 +36,8 @@ description: |
   Source for this snap packaging
   the snap directory used by snapcraft to generate this snap package 
   is in $SNAP/usr/share/doc/scidvspc-hkvc/
-  
+  You will also find this among my github.com/hanishkvc repositories.
+ 
   NOTE
   This is just a experimental snap packaging of scid_vs_pc by HanishKVC
 
@@ -96,6 +97,7 @@ parts:
     after: [scidvspc]
     override-prime: |
       MYDOCPATH=$SNAPCRAFT_PRIME/usr/share/doc/scidvspc-hkvc
-      mkdir $MYDOCPATH || /bin/true
+      #mkdir $MYDOCPATH || /bin/true
+      mkdir $MYDOCPATH
       cp -a ../project/snap $MYDOCPATH/
       rm -rf $MYDOCPATH/snap/.snapcraft
