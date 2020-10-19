@@ -1,5 +1,6 @@
 name: scidvspc-hkvc
-version: "latest-svn-test-20181116"
+base: core18
+version: "latest-svn-test-20201019"
 version-script: snap/get-version.sh
 summary: svidvspc - A Powerfull Chess Tookit
 description: |
