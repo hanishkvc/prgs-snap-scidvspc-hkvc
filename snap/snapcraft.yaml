@@ -1,7 +1,7 @@
 name: scidvspc-hkvc
 base: core18
 version: "latest-svn-test-20201019"
-version-script: snap/get-version.sh
+version-script: snap/local/get-version.sh
 summary: svidvspc - A Powerfull Chess Tookit
 description: |
   SCID vs. PC is a Chess Toolkit
