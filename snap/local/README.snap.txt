@@ -27,6 +27,35 @@ The source for this snap packaging is
   https://github.com/hanishkvc
 
 
+Build
+=======
+
+snapcraft
+
+* create the snap package running throu all the steps as required
+
+snapcraft --debug
+
+* create the snap package, while dropping down to a shell if something fails
+
+snapcraft clean scidvspc
+
+* to clean a specific part of a snap package like scidvspc in this example above
+
+snapcraft clean
+
+* clean everything including the multipass vm
+
+snapcraft build _OR_ snapcraft stage _OR_ snapcraft _OR_ ...
+
+* run upto including the specified step in the snap package creation steps.
+  If no step specified, then run through all the steps as may be required.
+
+snapcraft prime --shell _SAME_AS_ snapcraft stage --shell-after
+
+* drop to a shell before or after the specified step
+
+
 Runtime
 =========
 
