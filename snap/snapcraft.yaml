@@ -94,6 +94,9 @@ parts:
       - tcl
       - tcl-snack
       - tdom
+    override-pull: |
+      snapcraftctl pull
+      sed -i 's/install_scid: /install_sound:\n\tinstall -m 755 -d $(SHAREDIR)\/sounds || \/bin\/true\n\tcp -a .\/sounds\/* $(SHAREDIR)\/sounds\/\n\ninstall_scid: install_sound /' $SNAPCRAFT_PART_SRC/Makefile.conf
 
   fixit-scidvspc:
     plugin: nil
@@ -118,7 +121,7 @@ parts:
     after: [scidvspc]
     override-prime: |
       MYDOCPATH=$SNAPCRAFT_PRIME/usr/share/doc/scidvspc-hkvc
-      #mkdir $MYDOCPATH || /bin/true
+      rm -rf $MYDOCPATH || /bin/true
       mkdir $MYDOCPATH
       cp -a ../project/snap $MYDOCPATH/
       rm -rf $MYDOCPATH/snap/.snapcraft

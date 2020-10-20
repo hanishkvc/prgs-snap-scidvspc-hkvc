@@ -54,4 +54,6 @@ svn-3141-20201020
 * Moved the support files in snapcraft snap folder to the local
   subfolder.
 * tdom path added to TCLLIBPATH, so that it can be found.
+* sound wav files now installed, in case if user wants to setup
+  the sound path and use it.
 
