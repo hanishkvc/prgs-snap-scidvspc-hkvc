@@ -25,11 +25,13 @@ description: |
 
   ** Environment
 
-  TCLTK_BPATH- $SNAP/usr/share/tcltk
+  TCLTK_BPATH= $SNAP/usr/share/tcltk
 
-  TCL_LIBRARY- $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
+  TCL_LIBRARY= $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
 
-  TK_LIBRARY- $TCLTK_BPATH/tk8.6:$TK_LIBRARY
+  TK_LIBRARY=  $TCLTK_BPATH/tk8.6:$TK_LIBRARY
+
+  TCLLIBPATH=  $SNAP/usr/lib/tcltk $SNAP/usr/lib/tcltk/x86_64-linux-gnu $TCLLIBPATH
 
   ** Home
 
@@ -48,7 +50,7 @@ description: |
   the snap directory used by snapcraft to generate this snap package 
   is in $SNAP/usr/share/doc/scidvspc-hkvc/
 
-  You will also find this among my github.com/hanishkvc repositories.
+  You will also find this among my https://github.com/hanishkvc repositories.
 
   ** Version
 
@@ -72,7 +74,7 @@ apps:
       TCLTK_BPATH: $SNAP/usr/share/tcltk
       TCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
       TK_LIBRARY: $TCLTK_BPATH/tk8.6:$TK_LIBRARY
-      TCLLIBPATH: $SNAP/usr/lib/tcltk $TCLLIBPATH
+      TCLLIBPATH: $SNAP/usr/lib/tcltk $SNAP/usr/lib/tcltk/x86_64-linux-gnu $TCLLIBPATH
 
 parts:
   scidvspc:
