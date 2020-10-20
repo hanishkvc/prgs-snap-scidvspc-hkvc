@@ -49,3 +49,9 @@ svn-3141-20201019
   subfolder.
 * The fresh build has picked up v4.21+ of scidvspc.
 
+svn-3141-20201020
+
+* Moved the support files in snapcraft snap folder to the local
+  subfolder.
+* tdom path added to TCLLIBPATH, so that it can be found.
+
