@@ -209,6 +209,40 @@ Using alsa from snap
   filesystem conventions I am assuming that user doesnt need to change
   things in /usr/share/alsa, for now.
 
+* make snack always use alsa instead of oss for audio by explicitly
+  specifying that libsnack-alsa is needed for snap's runtime.
+
+  This was required because even thou with base of core18 tcl-snack was
+  pulling in libsnack-alsa, once I changed to base of core20, it pulled
+  in libsnack-oss, thus leading to audio not working because alsa by
+  default doesnt emulate oss sound devices. So forcing the use of alsa
+  backend of libsnack now.
+
+Switching to base core20
+
+* newer v11 of stockfish is used.
+
+* newer fontconfig is used which doesnt have issue with font config
+  files.
+
+  Also realised that I had a parallel issue of not installing fontconfig
+  tools in the snap's runtime. This inturn was leading to this snap's
+  figurines font not getting configured for the runtime during build.
+
+  So now I explicitly install fontconfig for the snap's runtime. However
+  that still hasn't solved the issue with figurines font. Maybe I need
+  to do additional configuration wrt these fonts.
+
+* The sound playback seems to have problems with core20, as only every
+  alternate audio seems to play from the scidvspc program. i.e once
+  a move related audio has played, then the next move audio doesnt play,
+  while the one after that will play and so on. This issue seems to be
+  noted on the internet wrt scidvspc and snack. And it seems to be noted
+  as due to snack having some bug and needing maintainance.
+
+Have to decide whether to stick to core20 and sacrifice wrt sound playback
+in the program, while gaining newer stockfish and better fontconfig logic
+or revert back to core18.
 
 
 TODO
@@ -227,11 +261,16 @@ T03 Handling of email / correspondance related logic May not
 T04 Look at fixing the issue with old fontconfig having issue with
     font configuration files, by installing a newer version.
 
+    core20 this is fixed. Need to do for core18 if required.
+
 T05 Use a newer version of stockfish.
 
-NOTE: May be using base20 should help with T04 and T05, as it should
-hopefully bring in packages from ubuntu 20.04 lts release, which
-should have newer packages. If that works, then need to check, this
-doesnt create any problem when running the snap in older ubuntu releases,
-just to be safe. Ideally it shouldnt create any problem, but better to
-check once to be sure.
+    core20 this is fixed. Need to do for core18 if required.
+
+T06 Cross verify that core20 based snap doesnt have any issue when
+    run on ubuntu 16.04 or 18.04 lts releases or for that manner
+    any linux distro other than ubuntu 20.04 lts.
+
+    Ideally it shouldnt create any problem, but better to check once
+    to be sure.
+
