@@ -1,6 +1,6 @@
 name: scidvspc-hkvc
-base: core18
-version: "latest-svn-test-20201020"
+base: core20
+version: "latest-svn-test-20201021"
 version-script: snap/local/get-version.sh
 summary: svidvspc - A Powerfull Chess Tookit
 description: |
@@ -83,7 +83,7 @@ confinement: strict
 apps:
   scidvspc:
     command: usr/local/bin/scid
-    plugs: [desktop,desktop-legacy,unity7,home,alsa]
+    plugs: [desktop,desktop-legacy,unity7,home,alsa,audio-playback]
     environment:
       TCLTK_BPATH: $SNAP/usr/share/tcltk
       TCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
