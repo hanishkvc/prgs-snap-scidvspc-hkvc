@@ -61,3 +61,10 @@ svn-3141-20201020
 * sounds folder is setup by default.
 * add fontconfig to snap's runtime environement thro stage-packages.
 
+svn-3141-20201021
+
+* explicitly ensure libsnack and inturn tcl-snack work through alsa
+  and not oss.
+* add audio-playback to list of required interfaces (i.e plugs of
+  this snap).
+
