@@ -113,6 +113,7 @@ parts:
       - tcl
       - tcl-snack
       - tdom
+      - libsnack-alsa
     override-pull: |
       snapcraftctl pull
       sed -i 's/install_scid: /install_sound:\n\tinstall -m 755 -d $(SHAREDIR)\/sounds || \/bin\/true\n\tcp -a .\/sounds\/* $(SHAREDIR)\/sounds\/\n\ninstall_scid: install_sound /' $SNAPCRAFT_PART_SRC/Makefile.conf
