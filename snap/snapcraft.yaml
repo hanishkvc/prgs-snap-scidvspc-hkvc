@@ -35,15 +35,28 @@ description: |
 
   ** Home
 
-  The <app-$HOME> dir is <user-$HOME>/snap/scidvspc-hkvc/<revision>
+  The AppWorkingDir is user's $HOME/snap/scidvspc-hkvc/<revision>
 
-  $SNAP_USER_DATA points to this <app's $HOME> dir
+  $SNAP_USER_DATA points to this AppWorkingDir.
 
   ** ToRun
 
   type scidvspc-hkvc.scidvspc in a console/terminal
 
   stockfish available in $SNAP/usr/games/
+
+  ** Sound
+
+  Snap doesnt auto connect the alsa interface to snaps. The user is required
+  to explicitly connect the snap's alsa plug to the system's alsa interface.
+
+  For this run the below
+
+  sudo snap connect scidvspc-hkvc:alsa
+
+  Also specify the sounds folder under options->sounds as
+
+  /snap/scidvspc-hkvc/current/usr/local/share/scid/sounds
 
   ** Source for this snap packaging
 
@@ -75,6 +88,10 @@ apps:
       TCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY
       TK_LIBRARY: $TCLTK_BPATH/tk8.6:$TK_LIBRARY
       TCLLIBPATH: $SNAP/usr/lib/tcltk $SNAP/usr/lib/tcltk/x86_64-linux-gnu $TCLLIBPATH
+
+layout:
+  /usr/share/alsa:
+    bind: $SNAP/usr/share/alsa
 
 parts:
   scidvspc:

@@ -56,4 +56,6 @@ svn-3141-20201020
 * tdom path added to TCLLIBPATH, so that it can be found.
 * sound wav files now installed, in case if user wants to setup
   the sound path and use it.
+* alsa interface setup, so that sound plays provided user explicitly
+  connects the alsa interface.
 

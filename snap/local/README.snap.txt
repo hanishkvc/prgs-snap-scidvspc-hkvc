@@ -189,6 +189,25 @@ Using alsa from snap
 
   snap connections
 
+* Make alsa runtime support files accessible at /usr/share/alsa
+
+  Use layout of snapcraft.yaml to bind mount $SNAP/usr/share/alsa
+  to /usr/share/alsa.
+
+  NOTE: if user needs to change any files in /usr/share/alsa in their
+  system to make alsa work on their system, then this layout based
+  bind mounting will override those changes, so rather in that case
+  either the changes in the users' host system need to be exposed to
+  snap (i.e propagate the other way to what is currently being done)
+  and or the contents of snap's /usr/share/alsa exposed for user to
+  edit in some way (which could include even a dumb mechanism like
+  checking for some specific files in snap's user specific directory
+  in their home folder and then bringing it into /usr/share/alsa in
+  the snap's runtime environment) and or ...
+  Have forgotten the nitty gritties of alsa now, so need to think
+  about this and look into it if required later. Ideally based on linux
+  filesystem conventions I am assuming that user doesnt need to change
+  things in /usr/share/alsa, for now.
 
 
 
@@ -201,10 +220,18 @@ T01 Have to check if there is a way to persist data across snap
     during snap remove. For now access to user home directory
     should allow users to persist any data they want.
 
-T02 Have to enable alsa interface, once issue with snack is
-    resolved.
-
 T03 Handling of email / correspondance related logic May not
     work currently. Also network interface is not enabled for
     the snap currently.
 
+T04 Look at fixing the issue with old fontconfig having issue with
+    font configuration files, by installing a newer version.
+
+T05 Use a newer version of stockfish.
+
+NOTE: May be using base20 should help with T04 and T05, as it should
+hopefully bring in packages from ubuntu 20.04 lts release, which
+should have newer packages. If that works, then need to check, this
+doesnt create any problem when running the snap in older ubuntu releases,
+just to be safe. Ideally it shouldnt create any problem, but better to
+check once to be sure.
