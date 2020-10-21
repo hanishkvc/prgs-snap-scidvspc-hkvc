@@ -169,6 +169,28 @@ Fixing TDOM not found
 
   With this both snack and tdom are found by scidvspc.
 
+Using alsa from snap
+
+* make libasound2 and helpers available to this snap's runtime
+  by including it in stage-packages or so.
+
+  For this snap, tcl-snack brings in this.
+
+* one needs to add alsa to the list of plugs.
+
+* explicitly connect the snap package with snap system wrt the
+  alsa interface. This is because alsa is not autoconnected.
+
+  sudo snap connect scidvspc-hkvc:alsa
+
+* cross verify the connection using
+
+  snap interface
+
+  snap connections
+
+
+
 
 TODO
 ======
