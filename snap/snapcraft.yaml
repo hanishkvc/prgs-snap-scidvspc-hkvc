@@ -54,7 +54,8 @@ description: |
 
   sudo snap connect scidvspc-hkvc:alsa
 
-  Also specify the sounds folder under options->sounds as
+  NOTE> If there is a issue with sound folders setup, cross verify that the
+  sounds folder under options->sounds is set to
 
   /snap/scidvspc-hkvc/current/usr/local/share/scid/sounds
 
@@ -123,6 +124,7 @@ parts:
       sed -i 's/Cmd  fruit/Cmd  \/snap\/scidvspc-hkvc\/current\/usr\/local\/bin\/fruit/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
       sed -i 's/Cmd  phalanx/Cmd  \/snap\/scidvspc-hkvc\/current\/usr\/local\/bin\/phalanx/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
       sed -i 's/Cmd  scidlet/Cmd  \/snap\/scidvspc-hkvc\/current\/usr\/local\/bin\/scidlet/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
+      sed -i 's/soundFolder {}/soundFolder "\/snap\/scidvspc-hkvc\/current\/usr\/local\/share\/scid\/sounds"/g' $SNAPCRAFT_PRIME/usr/local/bin/scid
       patch $SNAPCRAFT_PRIME/usr/local/bin/scid ../project/snap/local/patchs/scid.patch
       #rm $SNAPCRAFT_PRIME/usr/local/bin/scid.orig || /bin/true
 

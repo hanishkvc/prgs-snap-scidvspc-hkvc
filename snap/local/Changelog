@@ -58,4 +58,5 @@ svn-3141-20201020
   the sound path and use it.
 * alsa interface setup, so that sound plays provided user explicitly
   connects the alsa interface.
+* sounds folder is setup by default.
 
