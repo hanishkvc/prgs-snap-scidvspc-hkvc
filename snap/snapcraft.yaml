@@ -105,6 +105,7 @@ parts:
       - tcl-dev
       - tk-dev
     stage-packages:
+      - fontconfig
       - stockfish
       - libtcl8.6
       - libtk8.6

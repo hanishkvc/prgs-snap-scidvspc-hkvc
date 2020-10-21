@@ -59,4 +59,5 @@ svn-3141-20201020
 * alsa interface setup, so that sound plays provided user explicitly
   connects the alsa interface.
 * sounds folder is setup by default.
+* add fontconfig to snap's runtime environement thro stage-packages.
 
