@@ -67,4 +67,5 @@ svn-3141-20201021
   and not oss.
 * add audio-playback to list of required interfaces (i.e plugs of
   this snap).
+* make figurines font available to the program at runtime.
 

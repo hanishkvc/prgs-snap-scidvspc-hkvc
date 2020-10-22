@@ -93,6 +93,8 @@ apps:
 layout:
   /usr/share/alsa:
     bind: $SNAP/usr/share/alsa
+  /usr/share/fonts/truetype/Scid:
+    bind: $SNAP/usr/share/fonts/truetype/Scid
 
 parts:
   scidvspc:

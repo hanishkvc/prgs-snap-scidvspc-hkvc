@@ -244,6 +244,12 @@ Have to decide whether to stick to core20 and sacrifice wrt sound playback
 in the program, while gaining newer stockfish and better fontconfig logic
 or revert back to core18.
 
+Figurines font
+
+* have used snapcraft's layout bind mechanism to get the scid font in the
+  system's font path. With this the figurines font is being picked up by
+  the program at snap runtime.
+
 
 TODO
 ======
@@ -273,4 +279,7 @@ T06 Cross verify that core20 based snap doesnt have any issue when
 
     Ideally it shouldnt create any problem, but better to check once
     to be sure.
+
+T07 Need to check why program gui exit doesnt exit the underlying process
+    in core20.
 
