@@ -99,6 +99,19 @@ type scidvspc-hkvc.scidvspc in a console/terminal
 
 stockfish available in $SNAP/usr/games/
 
+snap connections
+~~~~~~~~~~~~~~~~~~
+
+To enable sound playback remember to run
+
+sudo snap connect scidvspc-hkvc:alsa
+
+To enable pinging of the FICS server do run the below, or else you will get
+a error message, when connecting to FICS server (which seems harmless).
+
+sudo snap connect scidvspc-hkvc:network-observe
+
+
 Debugging
 -----------
 
@@ -252,6 +265,8 @@ Switching to base core20
 Have to decide whether to stick to core20 and sacrifice wrt sound playback
 in the program, while gaining newer stockfish and better fontconfig logic
 or revert back to core18.
+
+For now reverting to core18.
 
 Figurines font
 
