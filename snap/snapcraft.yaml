@@ -80,6 +80,12 @@ description: |
   The snap package version contains the svn revision number of scidvspc
   within it. If manually building the snap, it will try to pick the
   latest revision of the code.
+
+  ** In this Release
+
+  Sound, Figurines font, tDom, Network (FICS), ...
+
+  Check Changelog for details including previous releases
  
   ** NOTE
 

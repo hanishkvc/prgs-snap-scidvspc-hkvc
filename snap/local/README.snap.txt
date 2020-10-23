@@ -2,7 +2,7 @@
 Notes for the scidvspc snap packaging
 ======================================
 Author: HanishKVC
-Version: 20201020IST2123
+Version: 20201023IST1415
 
 
 This is just a experimental snap packaging of scid_vs_pc by me.
@@ -14,6 +14,7 @@ Source
 The upstream url for scidvspc package is
 
 https://sourceforge.net/p/scidvspc/code/HEAD/tarball
+
 svn checkout http://svn.code.sf.net/p/scidvspc/code/ scidvspc-code
 
 The source for this snap packaging is
@@ -54,6 +55,14 @@ snapcraft build _OR_ snapcraft stage _OR_ snapcraft _OR_ ...
 snapcraft prime --shell _SAME_AS_ snapcraft stage --shell-after
 
 * drop to a shell before or after the specified step
+
+sudo snap remove scidvspc-hkvc
+
+* to remove any existing install
+
+sudo snap install scidvspc-hkvc_svn-<revision>-<dateinget-version>_amd64.snap --dangerous
+
+* to install the locally build snap package at your end.
 
 
 Runtime
@@ -256,6 +265,10 @@ Network access
 
 * Enable network-observe interface, which the user needs to explicitly
   connect, so that ping to FICS server can work.
+
+  sudo snap connect scidvspc-hkvc:network-observe
+
+  NOTE: As a safety precaution snap system doesnt autoconnect network-observe
 
 
 TODO
