@@ -59,6 +59,15 @@ description: |
 
   /snap/scidvspc-hkvc/current/usr/local/share/scid/sounds
 
+  ** Network FICS Ping
+
+  One needs to run
+
+  sudo snap connect scidvspc-hkvc:network-observe
+
+  to allow the snap to use ping (FICS server), else it will give a error dialog,
+  when connecting to FICS.
+
   ** Source for this snap packaging
 
   the snap directory used by snapcraft to generate this snap package 
@@ -84,7 +93,7 @@ license: GPL-2.0+
 apps:
   scidvspc:
     command: usr/local/bin/scid
-    plugs: [desktop,desktop-legacy,unity7,home,alsa,audio-playback,network]
+    plugs: [desktop,desktop-legacy,unity7,home,alsa,audio-playback,network,network-observe]
     environment:
       TCLTK_BPATH: $SNAP/usr/share/tcltk
       TCL_LIBRARY: $TCLTK_BPATH/tcl8.6:$TCL_LIBRARY

@@ -71,4 +71,6 @@ svn-3141-20201021+
 
 svn-3144-20201022
 * enable network interface
+* enable network-observe interface/plug, so that ping to fics can work.
+  user needs to explicitly connect this.
 

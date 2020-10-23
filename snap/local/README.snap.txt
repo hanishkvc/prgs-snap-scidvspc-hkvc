@@ -250,6 +250,13 @@ Figurines font
   system's font path. With this the figurines font is being picked up by
   the program at snap runtime.
 
+Network access
+
+* Enable network interface, so that user can connect to FICS server etc.
+
+* Enable network-observe interface, which the user needs to explicitly
+  connect, so that ping to FICS server can work.
+
 
 TODO
 ======
