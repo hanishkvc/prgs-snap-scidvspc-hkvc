@@ -31,6 +31,9 @@ The source for this snap packaging is
 Build
 =======
 
+Building
+-----------
+
 snapcraft
 
 * create the snap package running throu all the steps as required
@@ -63,6 +66,14 @@ sudo snap remove scidvspc-hkvc
 sudo snap install scidvspc-hkvc_svn-<revision>-<dateinget-version>_amd64.snap --dangerous
 
 * to install the locally build snap package at your end.
+
+Publishing
+------------
+
+snapcraft login
+
+snapcraft upload --release=<edge|beta|candidate|stable> mysnap_latest_amd64.snap
+
 
 
 Runtime
